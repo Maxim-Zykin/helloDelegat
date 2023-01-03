@@ -8,12 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController, NameDelegate {
-    
+
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var changeButton: UIButton!
     
-    func nameField(name: String) {
+    func nameField(name: String, dateOfBirth: String) {
         nameLabel.text = "Hello, \(name)!"
+        dateLabel.text = "Birthday: \(dateOfBirth)"
     }
     
     override func viewDidLoad() {

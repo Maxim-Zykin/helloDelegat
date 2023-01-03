@@ -22,7 +22,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtN-xa-0V0">
-                                <rect key="frame" x="154.66666666666666" y="367" width="84" height="35"/>
+                                <rect key="frame" x="154.66666666666666" y="485" width="83.666666666666657" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -31,19 +31,29 @@
                                     <segue destination="NUe-nc-Uoz" kind="show" identifier="nameText" id="L5F-1e-PIQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlQ-6l-FEK">
+                                <rect key="frame" x="148.66666666666666" y="351" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XlQ-6l-FEK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7sc-N4-i5K"/>
                             <constraint firstItem="XLU-QB-3M4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Cd6-zQ-Gkz"/>
-                            <constraint firstItem="xtN-xa-0V0" firstAttribute="top" secondItem="XLU-QB-3M4" secondAttribute="bottom" constant="47" id="KBq-Pm-jeF"/>
                             <constraint firstItem="xtN-xa-0V0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SsW-y1-5A6"/>
+                            <constraint firstItem="xtN-xa-0V0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="154.66666666666666" id="dKK-2C-lje"/>
                             <constraint firstItem="XLU-QB-3M4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="235" id="eAR-76-ays"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XLU-QB-3M4" secondAttribute="trailing" constant="16" id="rlC-Qd-uCe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xtN-xa-0V0" secondAttribute="bottom" constant="298" id="uH3-LX-jfA"/>
+                            <constraint firstItem="XlQ-6l-FEK" firstAttribute="top" secondItem="XLU-QB-3M4" secondAttribute="bottom" constant="31" id="xCJ-0Q-Ifb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="changeButton" destination="xtN-xa-0V0" id="AGW-UW-o5K"/>
+                        <outlet property="dateLabel" destination="XlQ-6l-FEK" id="oTU-n0-c2s"/>
                         <outlet property="nameLabel" destination="XLU-QB-3M4" id="2MJ-kA-2nL"/>
                     </connections>
                 </viewController>
@@ -60,24 +70,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="bPk-YJ-ZVc">
-                                <rect key="frame" x="125" y="319.33333333333331" width="143" height="144.33333333333331"/>
+                                <rect key="frame" x="52.666666666666657" y="247.33333333333334" width="288" height="288.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71m-jA-CNJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="143" height="24"/>
+                                        <rect key="frame" x="72.333333333333343" y="0.0" width="143" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FGX-yr-k4N">
-                                        <rect key="frame" x="0.0" y="50" width="143" height="34"/>
+                                        <rect key="frame" x="72.333333333333343" y="49.999999999999972" width="143" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="143" id="no1-Kr-Tfc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROK-92-gQi">
+                                        <rect key="frame" x="43.333333333333329" y="109.99999999999997" width="201.33333333333337" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="lUc-ID-csz">
+                                        <rect key="frame" x="0.0" y="159.99999999999997" width="288" height="68"/>
+                                        <connections>
+                                            <action selector="dateOfBirthAction:" destination="NUe-nc-Uoz" eventType="valueChanged" id="L6d-eR-AUb"/>
+                                        </connections>
+                                    </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-r2-B3f">
-                                        <rect key="frame" x="39.333333333333336" y="110" width="64.333333333333314" height="34.333333333333343"/>
+                                        <rect key="frame" x="111.66666666666669" y="253.99999999999997" width="64.333333333333314" height="34.333333333333343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -98,6 +120,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cvO-Hd-aHq"/>
                     <connections>
+                        <outlet property="datePicer" destination="lUc-ID-csz" id="gTi-uZ-Vub"/>
                         <outlet property="doneButton" destination="Alf-r2-B3f" id="6yD-Y0-78G"/>
                         <outlet property="nameTextField" destination="FGX-yr-k4N" id="TAX-5x-NhW"/>
                     </connections>
