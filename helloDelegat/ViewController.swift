@@ -21,6 +21,12 @@ class ViewController: UIViewController, NameDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         changeButton.layer.cornerRadius = 10
+        
+        if let name = UserDefaults.standard.value(forKey: Keys.name),
+           let date = UserDefaults.standard.value(forKey: Keys.dateOfBirth) {
+            nameLabel.text = name as? String
+            dateLabel.text = date as? String
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

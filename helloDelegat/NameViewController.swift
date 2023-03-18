@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum Keys {
+   static let name = "Name"
+   static let dateOfBirth = "DateOfBirth"
+}
+
 protocol NameDelegate {
     func nameField(name: String, dateOfBirth: String)
 }
@@ -24,14 +29,11 @@ class NameViewController: UIViewController {
         super.viewDidLoad()
         doneButton.layer.cornerRadius = 10
         datePicer.backgroundColor = .white
-
     }
 
     @IBAction func dateOfBirthAction(_ sender: Any) {
         let dateFormattor = DateFormatter()
-        //dateFormattor.dateFormat = "dd-MM-yyyy 'at' HH:mm"
         dateFormattor.dateFormat = "dd.MM.yyyy"
-        //dateFormattor.dateStyle = .full
         dateOfBirth = dateFormattor.string(from: datePicer.date)
     }
     
@@ -39,6 +41,8 @@ class NameViewController: UIViewController {
         if delegate != nil {
             if nameTextField != nil {
                 let data = nameTextField.text
+                UserDefaults.standard.set(data!, forKey: Keys.name)
+                UserDefaults.standard.set(dateOfBirth, forKey: Keys.dateOfBirth)
                 delegate?.nameField(name: data!, dateOfBirth: dateOfBirth)
                 dismiss(animated: true)
             }
