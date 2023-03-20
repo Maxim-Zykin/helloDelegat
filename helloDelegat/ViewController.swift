@@ -17,16 +17,24 @@ class ViewController: UIViewController, NameDelegate {
         nameLabel.text = "Hello, \(name)!"
         dateLabel.text = "Birthday: \(dateOfBirth)"
     }
+    var model = Model()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         changeButton.layer.cornerRadius = 10
-        
-        if let name = UserDefaults.standard.value(forKey: Keys.name),
-           let date = UserDefaults.standard.value(forKey: Keys.dateOfBirth) {
-            nameLabel.text = name as? String
-            dateLabel.text = date as? String
+    
+        if let data = UserDefaults.standard.data(forKey: Keys.save) {
+            model = (try? JSONDecoder().decode(Model.self, from: data)) ?? Model()
+            nameLabel.text = model.name
+            dateLabel.text = model.dateOfBirth
         }
+        
+//        
+//        if let name = UserDefaults.standard.value(forKey: Keys.name),
+//           let date = UserDefaults.standard.value(forKey: Keys.dateOfBirth) {
+//            nameLabel.text = name as? String
+//            dateLabel.text = date as? String
+//        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

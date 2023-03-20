@@ -10,6 +10,7 @@ import UIKit
 enum Keys {
    static let name = "Name"
    static let dateOfBirth = "DateOfBirth"
+    static let save = "Save"
 }
 
 protocol NameDelegate {
@@ -24,6 +25,7 @@ class NameViewController: UIViewController {
     
     var delegate: NameDelegate? = nil
     var dateOfBirth = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +43,14 @@ class NameViewController: UIViewController {
         if delegate != nil {
             if nameTextField != nil {
                 let data = nameTextField.text
-                UserDefaults.standard.set(data!, forKey: Keys.name)
-                UserDefaults.standard.set(dateOfBirth, forKey: Keys.dateOfBirth)
+                
+                let modelData = Model(name: data, dateOfBirth: dateOfBirth)
+                if let model = try? JSONEncoder().encode(modelData) {
+                    UserDefaults.standard.set(model, forKey: Keys.save)
+                }
+
+//                UserDefaults.standard.set(data!, forKey: Keys.name)
+//                UserDefaults.standard.set(dateOfBirth, forKey: Keys.dateOfBirth)
                 delegate?.nameField(name: data!, dateOfBirth: dateOfBirth)
                 dismiss(animated: true)
             }
